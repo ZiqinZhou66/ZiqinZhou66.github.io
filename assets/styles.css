@@ -54,26 +54,26 @@ p {
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    color: white;
+    color: rgb(41, 41, 41);
     margin: 5px;
     transition: all 0.3s ease-in-out;
 }
 
 /* 纸质文档按钮（莫兰迪蓝） */
 .paper {
-    background-color: #A7B8C7; /* 莫兰迪蓝 */
-    color: white;
+    background-color: #5381a9; /* 莫兰迪蓝 */
+    color: rgb(255, 255, 255);
 }
 
 /* 代码/项目按钮（莫兰迪红） */
 .code {
-    background-color: #D8A7B1; /* 莫兰迪粉 */
+    background-color: #d5506b; /* 莫兰迪粉 */
     color: white;
 }
 
 /* 按钮悬停效果（变浅一点） */
 .paper:hover {
-    background-color: #BCCAD3; /* 浅蓝 */
+    background-color: #9ec0d1; /* 浅蓝 */
 }
 .code:hover {
     background-color: #E4C2CA; /* 浅粉 */
