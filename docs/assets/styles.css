@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;  /* 确保文本左对齐 */
+    margin: 40px auto;  /* 让页面居中，但内容左对齐 */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 头像和标题靠左 */
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* 标题 */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+h2 {
+    font-size: 20px;
+    color: #555;
+}
+
+/* 段落 */
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* 按钮 */
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+}
+.paper { background-color: black; }
+.code { background-color: red; }
+.paper:hover, .code:hover { opacity: 0.8; }
+
+/* 论文 */
+.paper {
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
