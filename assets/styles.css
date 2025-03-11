@@ -79,3 +79,20 @@ p {
 .code:hover {
     background-color: #E4C2CA; /* 浅粉 */
 }
+
+/* 论文框默认样式 */
+.paper-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+/* 鼠标悬停时，边框变成黄色闪光 */
+.paper-item:hover {
+    border: 2px solid #e6b3ee; /* 金黄色边框 */
+    box-shadow: 0 0 15px rgba(238, 119, 210, 0.8); /* 黄色光晕 */
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+}
