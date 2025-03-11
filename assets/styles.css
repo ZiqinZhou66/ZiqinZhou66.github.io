@@ -50,22 +50,31 @@ p {
 /* 按钮 */
 .btn {
     display: inline-block;
-    padding: 8px 12px;
+    padding: 10px 15px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
     color: white;
     margin: 5px;
+    transition: all 0.3s ease-in-out;
 }
-.paper { background-color: black; }
-.code { background-color: red; }
-.paper:hover, .code:hover { opacity: 0.8; }
 
-/* 论文 */
+/* 纸质文档按钮（莫兰迪蓝） */
 .paper {
-    text-align: left;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #A7B8C7; /* 莫兰迪蓝 */
+    color: white;
+}
+
+/* 代码/项目按钮（莫兰迪红） */
+.code {
+    background-color: #D8A7B1; /* 莫兰迪粉 */
+    color: white;
+}
+
+/* 按钮悬停效果（变浅一点） */
+.paper:hover {
+    background-color: #BCCAD3; /* 浅蓝 */
+}
+.code:hover {
+    background-color: #E4C2CA; /* 浅粉 */
 }
