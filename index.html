@@ -9,13 +9,16 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 40px;
+            color: #333;
         }
-        h1 { font-size: 28px; font-weight: bold; }
-        h2 { font-size: 22px; color: #666; }
+        h1 { font-size: 32px; font-weight: bold; }
+        h2 { font-size: 24px; color: #555; }
+        .section { margin: 40px 0; }
+        .container { max-width: 800px; margin: 0 auto; text-align: left; }
         .authors { font-size: 16px; margin: 10px 0; }
         .button {
             display: inline-block;
-            padding: 10px 15px;
+            padding: 8px 12px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
@@ -25,78 +28,89 @@
         .paper-btn { background-color: black; }
         .code-btn { background-color: red; }
         .button:hover { opacity: 0.8; }
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+        .paper-list {
+            text-align: left;
             margin-top: 20px;
         }
-        .image-gallery img {
-            width: 250px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        .paper-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         }
+        .paper-item h3 { margin: 0; }
     </style>
 </head>
 <body>
     <h1>Ziqin Zhou</h1>
-    <h2>Senior Research Scientist | Computer Vision & AI</h2>
+    <h2>Research Scientist | Computer Vision & AIGC</h2>
 
-    <p class="authors">
-        <b>Research Fellow, Australian Institute for Machine Learning (AIML), The University of Adelaide</b><br>
-        <b>Intern, Microsoft Research Asia (MSRA)</b><br>
-        <a href="mailto:ziqin.zhou@adelaide.edu.au">📧 Email</a> | 
-        <a href="https://www.linkedin.com/in/ziqin-zhou-6408051b0">🔗 LinkedIn</a> |
-        <a href="https://github.com/ZiqinZhou66">💻 GitHub</a>
-    </p>
+    <div class="container">
+        <div class="section">
+            <h2>About Me</h2>
+            <p>
+                I currently works as Research Scientist at Leonardo.AI(Canva), focusing on text-to-video generation, multi-modal learning, 
+                and deep generative models. Previously, I was a research fellow at the Australian Institute for Machine Learning (AIML), 
+                University of Adelaide, where I worked on AIGC and segmentation models. 
+            </p>
+        </div>
 
-    <h2>Research Topics</h2>
-    <p>AIGC, Text-to-Video Generation, Multi-Modality, Few-shot Learning, Stable Diffusion, LLM</p>
+        <div class="section">
+            <h2>Education</h2>
+            <p><b>Ph.D. in Computer Science</b>, University of Adelaide, Australian Institute for Machine Learning (AIML), 2021–2024</p>
+            <p><b>M.S. in Pattern Recognition and Intelligent Systems</b>, Sichuan University, China, 2017–2020</p>
+            <p><b>B.S. in Electronic and Information Engineering</b>, Sichuan University, China, 2013–2017</p>
+        </div>
 
-    <h2>Highlighted Publications</h2>
-    <p><b>HiTVideo</b>: Hierarchical Tokenizers for Text-to-video Generation</p>
-    <a class="button paper-btn" href="https://arxiv.org/abs/YOUR_PAPER_ID">📄 Paper</a>
-    <a class="button code-btn" href="https://github.com/ZiqinZhou66/HiTVideo">💻 Code</a>
+        <div class="section">
+            <h2>Work Experience</h2>
+            <p><b>Leonardo.AI(Canva), Research Scientist</b> (2025 - Present)</p>
+            <p><b>Australian Institute for Machine Learning (AIML, UofA), Research Fellow</b> (2024.07 – 2024.12)</p>
+            <p><b>Microsoft Research Asia (MSRA), Intern</b> (2024.02 – 2024.07)</p>
+            <p><b>Sichuan University, Research Assistant / Project Manager</b> (2020.06 – 2022.02)</p>
+        </div>
 
-    <p><b>Unlocking Potential of Pre-trained Vision Transformers for Few-shot Semantic Segmentation</b> (CVPR 2024)</p>
-    <a class="button paper-btn" href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Unlocking_the_Potential_of_Pre-trained_Vision_Transformers_for_Few-Shot_Semantic_CVPR_2024_paper.pdf">📄 Paper</a>
+        <div class="section">
+            <h2>Selected Publications</h2>
+            <div class="paper-list">
+                <div class="paper-item">
+                    <h3>HiTVideo: Hierarchical Tokenizers for Text-to-video Generation</h3>
+                    <p><b>Ziqin Zhou</b>, et al.</p>
+                    <a class="button paper-btn" href="https://arxiv.org/abs/YOUR_PAPER_ID">📄 Paper</a>
+                    <a class="button code-btn" href="https://github.com/ZiqinZhou66/HiTVideo">💻 Code</a>
+                </div>
 
-    <p><b>ZegCLIP</b>: Towards Adapting CLIP for Zero-shot Semantic Segmentation (CVPR 2023)</p>
-    <a class="button paper-btn" href="https://arxiv.org/abs/YOUR_PAPER_ID">📄 Paper</a>
-    
-    <h2>Experiments</h2>
-    <div class="image-gallery">
-        <img src="assets/images/example1.png" alt="Example 1">
-        <img src="assets/images/example2.png" alt="Example 2">
-        <img src="assets/images/example3.png" alt="Example 3">
+                <div class="paper-item">
+                    <h3>Unlocking Potential of Pre-trained Vision Transformers for Few-shot Semantic Segmentation</h3>
+                    <p>CVPR 2024 | <b>Ziqin Zhou</b>, et al.</p>
+                    <a class="button paper-btn" href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_Unlocking_the_Potential_of_Pre-trained_Vision_Transformers_for_Few-Shot_Semantic_CVPR_2024_paper.pdf">📄 Paper</a>
+                </div>
+
+                <div class="paper-item">
+                    <h3>ZegCLIP: Towards Adapting CLIP for Zero-shot Semantic Segmentation</h3>
+                    <p>CVPR 2023 | <b>Ziqin Zhou</b>, et al.</p>
+                    <a class="button paper-btn" href="https://arxiv.org/abs/YOUR_PAPER_ID">📄 Paper</a>
+                </div>
+
+                <div class="paper-item">
+                    <h3>EZIGen: Enhancing Zero-shot Personalized Image Generation</h3>
+                </div>
+
+                <div class="paper-item">
+                    <h3>Unified Low-shot Semantic Segmentation Solution with Pre-trained Models</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Contact</h2>
+            <p>
+                <a href="mailto:ziqinzhou@hotmail.com">📧 Email</a> | 
+                <a href="https://www.linkedin.com/in/ziqin-zhou-6408051b0">🔗 LinkedIn</a> |
+                <a href="https://github.com/ZiqinZhou66">💻 GitHub</a>
+            </p>
+        </div>
     </div>
-
-    <h2>Awards & Honors</h2>
-    <p>⭐ Stars of Tomorrow Internship Program, Microsoft (2024)</p>
-    <p>🏆 Australian Government Research Training Program Scholarship (2020)</p>
-    <p>🎖️ Chinese National Scholarship (2019)</p>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Homepage</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 40px; }
-        h1 { font-size: 36px; }
-        p { font-size: 18px; }
-        .button { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; }
-        .button:hover { background-color: #0056b3; }
-    </style>
-</head>
-<body>
-    <h1>Welcome to My GitHub Homepage</h1>
-    <p>This is my personal GitHub Pages site.</p>
-    <a class="button" href="./HiTVideo/index.html">Visit HiTVideo Project</a>
-</body>
-</html>
-
