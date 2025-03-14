@@ -1,29 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HiTVideo: Hierarchical Tokenizers for Text-to-video Generation</title>
-    <link rel="stylesheet" href="assets/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HiTVideo 论文展示</title>
+  <style>
+    /* 基础样式重置 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      background: #f4f4f4;
+      color: #333;
+    }
+    /* 固定导航栏 */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 1rem 2rem;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 1rem;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* 头部区域 */
+    header {
+      background: url('images/header-bg.jpg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 1rem;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    a.button {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 1rem;
+    }
+    /* 各区块样式 */
+    section {
+      padding: 4rem 2rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 1rem;
+      text-align: justify;
+    }
+    /* 图示样式 */
+    figure {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+    }
+    figure figcaption {
+      margin-top: 0.5rem;
+      color: #555;
+    }
+    /* 页脚 */
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- 导航栏 -->
+  <nav>
+    <ul>
+      <li><a href="#home">首页</a></li>
+      <li><a href="#abstract">摘要</a></li>
+      <li><a href="#method">研究方法</a></li>
+      <li><a href="#figures">图示</a></li>
+      <li><a href="#results">实验结果</a></li>
+      <li><a href="#download">论文下载</a></li>
+      <li><a href="#contact">联系</a></li>
+    </ul>
+  </nav>
+
+  <!-- 头部区域 -->
+  <header id="home">
     <div class="container">
-        <h1>📽️ HiTVideo: Hierarchical Tokenizers for Text-to-video Generation</h1>
-        <p><b>Ziqin Zhou</b>, et al.</p>
-        <a class="btn paper" href="https://arxiv.org/abs/2409.08091">📄 Paper</a>
-        <a class="btn code" href="https://github.com/ZiqinZhou66/HiTVideo">💻 Project</a>
-
-        <h2>🎬 Project Overview</h2>
-        <p>
-            HiTVideo introduces a novel hierarchical tokenizer for text-to-video generation, leveraging 
-            multi-scale discrete tokens to enhance video generation quality.
-        </p>
-
-        <h2>🔬 Experimental Results</h2>
-        <div class="gallery">
-            <img src="assets/example1.png" alt="Example 1">
-            <img src="assets/example2.png" alt="Example 2">
-        </div>
+      <h1>HiTVideo: 分层视频 Tokenizer 提升文本到视频生成</h1>
+      <p>基于自回归大模型的创新研究与实践</p>
+      <a class="button" href="#abstract">了解更多</a>
     </div>
+  </header>
+
+  <!-- 论文摘要 -->
+  <section id="abstract">
+    <div class="container">
+      <h2>论文摘要</h2>
+      <p>
+        本论文针对文本到视频生成任务中的视频数据时空复杂性问题，提出了一种多层次离散化视频 Tokenizer 的方法。
+        该方法利用 3D 自回归编码器和层次化代码本设计，在高压缩率下保留了关键语义与时空细节，从而为自回归大模型生成视频提供高质量的中间表示。
+      </p>
+    </div>
+  </section>
+
+  <!-- 研究方法 -->
+  <section id="method">
+    <div class="container">
+      <h2>研究方法</h2>
+      <p>
+        本论文主要贡献包括：
+      </p>
+      <ul>
+        <li>设计了分层视频 Tokenizer，通过多层离散化捕捉视频的高层语义信息与低层细节。</li>
+        <li>采用 3D 自回归编码器，实现了视频数据在时空维度上的有效压缩与重构。</li>
+        <li>结合自回归大模型进行视频生成，实现了文本条件下的视频生成任务。</li>
+      </ul>
+      <p>
+        方法流程类似于传统动画制作流程，先构建高层故事板，再逐步细化视频细节。
+      </p>
+    </div>
+  </section>
+
+  <!-- 图示部分 -->
+  <section id="figures">
+    <div class="container">
+      <h2>图示</h2>
+      <!-- 图1：整体架构示意图 -->
+      <figure>
+        <img src="images/figure1.png" alt="图1：HiTVideo整体架构示意图">
+        <figcaption>图1：HiTVideo 整体架构示意图</figcaption>
+      </figure>
+      <!-- 图2：分层 Tokenizer 定性评估 -->
+      <figure>
+        <img src="images/figure2.png" alt="图2：分层 Tokenizer 定性评估">
+        <figcaption>图2：分层 Tokenizer 定性评估</figcaption>
+      </figure>
+      <!-- 如有更多图示，可继续添加 -->
+    </div>
+  </section>
+
+  <!-- 实验结果 -->
+  <section id="results">
+    <div class="container">
+      <h2>实验结果</h2>
+      <p>
+        通过对比实验，本方法在视频重构指标上显示出明显优势：
+      </p>
+      <ul>
+        <li>大幅降低 Bits Per Pixel (bpp) 的同时保持了较低的 LPIPS 感知损失。</li>
+        <li>在 PSNR、SSIM 等指标上均达到了较高水平，证明了方法在细节重构与整体视觉效果上的有效性。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 论文下载 -->
+  <section id="download">
+    <div class="container">
+      <h2>论文下载</h2>
+      <p>点击下面按钮下载完整论文 PDF 文档：</p>
+      <a class="button" href="HiTVideo_arxiv.pdf" target="_blank">下载 PDF</a>
+    </div>
+  </section>
+
+  <!-- 联系信息 -->
+  <section id="contact">
+    <div class="container">
+      <h2>联系信息</h2>
+      <p>
+        如需进一步了解本研究或洽谈合作，请发送邮件至：
+        <a href="mailto:your.email@example.com">your.email@example.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>&copy; 2025 Your Name. 保留所有权利。</p>
+  </footer>
+
 </body>
 </html>
