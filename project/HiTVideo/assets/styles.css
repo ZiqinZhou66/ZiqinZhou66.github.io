@@ -1,32 +1,280 @@
+/* 1. 在顶部引入 Google Fonts：Open Sans (可自行替换为其他字体) */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+/* ========== 基础样式重置或自定义 ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  让 body 作为整体容器并居中，可以通过设置
+  max-width 来控制页面总宽度 
+*/
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f8f8f8;
+  font-family: 'Open Sans', sans-serif; 
+  background-color: #ffffff;  /* 改为纯白 */
+  color: #333;                /* 深灰文字 */
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 1080px; 
+  text-align: center; 
 }
-.container {
-    width: 60%;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+/* ========== 头部区域 ========== */
+.page-header {
+  /* 使用稍浅的灰白背景，让头部区与正文区区分 */
+  background-color: #f9fafb;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #eee;
 }
-h1 { color: #4A4A4A; }
+
+.page-header h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #555;   /* 副标题颜色稍微深一些 */
+  margin-top: 0.5rem;
+}
+
+.paper-info {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* ========== 链接/按钮区 ========== */
+.links {
+  margin: 2rem 0; /* 稍微拉大一点上下间距 */
+}
+
 .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
+  display: inline-block;
+  background-color: #80acf3; /* 使用更鲜明的蓝色 */
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem;
+  border-radius: 4px;
+  border: none;            /* 移除默认边框 */
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* 轻微阴影 */
 }
-.paper { background-color: #A7B8C7; }
-.code { background-color: #D8A7B1; }
-.paper:hover { background-color: #BCCAD3; }
-.code:hover { background-color: #E4C2CA; }
-.gallery img {
-    width: 45%;
-    margin: 5px;
-    border-radius: 8px;
+
+.btn:hover {
+  background-color: #2b60bb; /* Hover 变深一点 */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);  /* Hover 时阴影加深 */
 }
+
+.btn i {
+  margin-right: 0.4rem;
+}
+
+/* ========== 摘要区 ========== */
+.abstract {
+  margin: 2rem auto;
+  max-width: 900px;
+  /* 可以加一点微妙的背景以区分，若不需要可注释掉
+  background-color: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 1.5rem;
+  */
+}
+
+/* ========== 论文章节区 ========== */
+.paper-section {
+  margin: 2rem auto; 
+  max-width: 900px;
+  /* 如果也要让这里的所有文字居中，可以加上 text-align: center; */
+}
+
+/* 如果只想标题居中、段落左对齐，可这么写：
+.paper-section h2,
+.paper-section h3 {
+  text-align: center;
+}
+.paper-section p {
+  text-align: left;
+}
+*/
+
+/* ========== 图片占位 ========== */
+.image-placeholder {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.image-placeholder img {
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.fig-caption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* ========== 引用列表 (References) ========== */
+.paper-section ol {
+  padding-left: 1.2rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.paper-section ol li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* ========== 页脚区 ========== */
+.page-footer {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.page-footer p {
+  margin: 0.3rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.page-footer a {
+  color: #4285f4; /* 与按钮同色，整体风格统一 */
+  text-decoration: none;
+}
+
+.page-footer a:hover {
+  text-decoration: underline;
+}
+
+
+.cover-image {
+  margin: 2rem auto;
+  max-width: 900px;  /* 控制图片所在容器的最大宽度 */
+  text-align: center; 
+}
+  
+.cover-image img {
+  max-width: 100%;   /* 让图片自适应容器宽度 */
+  border-radius: 8px; /* 圆角，可按需调整 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* 图片阴影，可选 */
+}
+
+.my-png-section {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 auto; /* 让容器居中 */
+  text-align: center; /* 让里面的内容也居中 */
+}
+  
+  /* 针对 <img> 进一步去除任何可能的边框/背景/阴影 */
+.my-png-section img {
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0;
+  padding: 0;
+  max-width: 100%; /* 保证图片不超出容器 */
+  height: auto;    /* 等比例缩放 */
+}
+  
+
+/* Generation 视频网格区域 */
+.gen-videos-grid {
+    margin: 2rem auto;                  /* 居中整个区域 */
+    max-width: 1200px;                  /* 控制整体宽度 */
+    padding: 0 1rem;
+    display: grid;                      /* 启用 CSS Grid 布局 */
+    grid-template-columns: repeat(3, 1fr);  /* 每行 3 列 */
+    gap: 1rem;                          /* 网格项之间间隔 */
+  }
+  
+  /* 章节标题 */
+  .gen-videos-grid .section-title {
+    grid-column: 1 / -1;                /* 占满整行 */
+    text-align: center;                 /* 居中显示 */
+    font-size: 2rem;                    /* 标题字号 */
+    margin-bottom: 1.5rem;              /* 标题与下面内容的间距 */
+  }
+  
+  /* 每个视频项样式 */
+  .gen-video-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  }
+  
+  /* 视频标签样式 */
+  .gen-video-item video {
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 4px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Caption 文本样式 */
+  .gen-video-item .caption {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  .citation-section {
+    /* 整体引用块居中排列 */
+    margin: 2rem auto;
+    /* 宽度可根据页面风格调整 */
+    max-width: 900px; 
+    background-color: #fafafa; /* 或 #ffffff, #f9f9f9 等 */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.5rem;
+    /* 默认左对齐文字，但整体容器居中 */
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* 标题 */
+  .citation-section h3 {
+    margin-top: 0;         /* 去掉标题与容器顶部过大间距 */
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: #333;
+    text-align: center;    /* 标题可居中，与引用文本区别 */
+  }
+  
+  /* 代码区块 */
+  .citation-code {
+    font-family: Consolas, "Courier New", Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+    background: none;      /* 去掉自身背景，与父容器保持一致 */
+    border: none;          /* 去掉自身边框 */
+    padding: 0;
+    margin: 0;
+    white-space: pre-wrap; /* 自动换行，避免超出容器 */
+  }
+  
